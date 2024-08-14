@@ -22,9 +22,13 @@ fi
 
 echo starting server
 
+CI=${CI:-false}
+
 cp -r ./bin $RUNDIR
-cp -r ./public $RUNDIR
+# cp -r ./public $RUNDIR
 cp -r ./tools $RUNDIR
+ln -s $(realpath ./public) scripts/grafana-server/tmp
+
 
 mkdir $RUNDIR/conf
 mkdir $PROV_DIR
@@ -39,13 +43,21 @@ cp ./conf/defaults.ini $RUNDIR/conf/defaults.ini
 echo -e "Copying custom plugins from e2e tests"
 
 mkdir -p "$RUNDIR/data/plugins"
+
+# PLUGINS_PATH="$RUNDIR/data/plugins"
 # when running in a local computer
-if [ -d "./e2e/custom-plugins" ]; then
-  cp -r "./e2e/custom-plugins" "$RUNDIR/data/plugins"
-# when running in CI
-elif [ -d "../e2e/custom-plugins" ]; then
-  cp -r "../e2e/custom-plugins" "$RUNDIR/data/plugins"
-fi
+# if [ -d "./e2e/custom-plugins" ]; then
+#   # cp -r "./e2e/custom-plugins" "$RUNDIR/data/plugins"
+#   # PLUGINS_PATH=$(realpath ./e2e/custom-plugins)
+#   ln -s $(realpath ./e2e/custom-plugins/*) "$RUNDIR/data/plugins"
+# # when running in CI
+# elif [ -d "../e2e/custom-plugins" ]; then
+#   cp -r "../e2e/custom-plugins" "$RUNDIR/data/plugins"
+#   # PLUGINS_PATH="../e2e/custom-plugins"
+#   # ln -s $(realpath ../e2e/custom-plugins/*) "$RUNDIR/data/plugins"
+# fi
+
+ln -s $(realpath ./e2e/custom-plugins/*) "$RUNDIR/data/plugins"
 
 echo -e "Copy provisioning setup from devenv"
 
@@ -62,6 +74,7 @@ $RUNDIR/bin/"$ARCH"grafana-server \
   --homepath=$HOME_PATH \
   --pidfile=$RUNDIR/pid \
   cfg:server.http_port=$PORT \
+  # cfg:paths.plugins=$PLUGINS_PATH \
   cfg:server.router_logging=1 \
   cfg:app_mode=development \
   cfg:enterprise.license_path=$1
