@@ -246,6 +246,27 @@ To configure Grafana HTTPS and restart Grafana, complete the following steps.
 
 1. [Restart the Grafana server]({{< relref "./start-restart-grafana#linux" >}}) using `systemd`, `init.d`, or the binary as appropriate for your environment.
 
+### Configure Kubernetes Probes using Helm
+
+If installing Grafana using Helm (see [Deploy Grafana using Helm Charts]({{< relref "./installation/helm" >}}), update the liveness and readiness probes to HTTPS accordingly. Example values from chart: 
+
+```
+readinessProbe:
+  httpGet:
+    path: /api/health
+    port: 3000
+    scheme: HTTPS
+
+livenessProbe:
+  httpGet:
+    path: /api/health
+    port: 3000
+    scheme: HTTPS
+  initialDelaySeconds: 60
+  timeoutSeconds: 30
+  failureThreshold: 10
+```
+
 ## Troubleshooting
 
 Refer to the following troubleshooting tips as required.
