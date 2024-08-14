@@ -119,6 +119,9 @@
       },
       "used-by_other": ""
     },
+    "contactPointFilter": {
+      "label": ""
+    },
     "grafana-rules": {
       "export-rules": "",
       "loading": "",
@@ -683,18 +686,14 @@
       "message": ""
     }
   },
+  "embed": {
+    "share": {
+      "time-range-description": "",
+      "time-range-label": ""
+    }
+  },
   "explore": {
     "add-to-dashboard": "添加到仪表板",
-    "add-to-library-modal": {
-      "auto-star": "",
-      "data-source-name": "",
-      "data-source-type": "",
-      "description": "",
-      "info": "",
-      "query": "",
-      "title": "",
-      "visibility": ""
-    },
     "logs": {
       "maximum-pinned-logs": "",
       "no-logs-found": "",
@@ -702,6 +701,7 @@
       "stop-scan": ""
     },
     "query-library": {
+      "add-edit-description": "",
       "cancel": "",
       "default-description": "",
       "delete-query": "",
@@ -710,9 +710,25 @@
       "private": "",
       "public": "",
       "query-deleted": "",
+      "query-template-add-error": "",
       "query-template-added": "",
-      "query-template-error": "",
+      "query-template-edit-error": "",
+      "query-template-edited": "",
       "save": ""
+    },
+    "query-template-modal": {
+      "add-info": "",
+      "add-title": "",
+      "auto-star": "",
+      "data-source-name": "",
+      "description": "",
+      "edit-info": "",
+      "edit-title": "",
+      "query": "",
+      "visibility": ""
+    },
+    "query-template-modall": {
+      "data-source-type": ""
     },
     "rich-history": {
       "close-tooltip": "关闭查询历史记录",
@@ -1647,6 +1663,18 @@
     }
   },
   "plugins": {
+    "details": {
+      "labels": {
+        "dependencies": "",
+        "downloads": "",
+        "from": "",
+        "reportAbuse": "",
+        "signature": "",
+        "status": "",
+        "updatedAt": "",
+        "version": ""
+      }
+    },
     "empty-state": {
       "message": ""
     }
@@ -2020,8 +2048,7 @@
       "html": "嵌入 HTML",
       "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Grafana 才能加载图表。",
       "info": "生成用于对此面板嵌入 iframe 的 HTML。",
-      "time-range": "当前时间范围",
-      "time-range-description": "将当前相对时间范围转换为绝对时间范围"
+      "time-range": ""
     },
     "export": {
       "back-button": "返回到导出配置",
@@ -2091,10 +2118,14 @@
   },
   "share-panel": {
     "drawer": {
-      "share-link-title": ""
+      "share-embed-title": "",
+      "share-link-title": "",
+      "share-snapshot-title": ""
     },
     "menu": {
-      "share-link-title": ""
+      "share-embed-title": "",
+      "share-link-title": "",
+      "share-snapshot-title": ""
     }
   },
   "share-playlist": {
@@ -2180,6 +2211,9 @@
       "success-creation": "",
       "success-delete": "",
       "view-all-button": ""
+    },
+    "share-panel": {
+      "info-alert": ""
     },
     "url-column-header": "快照网址",
     "view-button": "查看"

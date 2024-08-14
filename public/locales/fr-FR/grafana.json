@@ -120,6 +120,9 @@
       "used-by_one": "",
       "used-by_other": ""
     },
+    "contactPointFilter": {
+      "label": ""
+    },
     "grafana-rules": {
       "export-rules": "",
       "loading": "",
@@ -691,18 +694,14 @@
       "message": ""
     }
   },
+  "embed": {
+    "share": {
+      "time-range-description": "",
+      "time-range-label": ""
+    }
+  },
   "explore": {
     "add-to-dashboard": "Ajouter au tableau de bord",
-    "add-to-library-modal": {
-      "auto-star": "",
-      "data-source-name": "",
-      "data-source-type": "",
-      "description": "",
-      "info": "",
-      "query": "",
-      "title": "",
-      "visibility": ""
-    },
     "logs": {
       "maximum-pinned-logs": "",
       "no-logs-found": "",
@@ -710,6 +709,7 @@
       "stop-scan": ""
     },
     "query-library": {
+      "add-edit-description": "",
       "cancel": "",
       "default-description": "",
       "delete-query": "",
@@ -718,9 +718,25 @@
       "private": "",
       "public": "",
       "query-deleted": "",
+      "query-template-add-error": "",
       "query-template-added": "",
-      "query-template-error": "",
+      "query-template-edit-error": "",
+      "query-template-edited": "",
       "save": ""
+    },
+    "query-template-modal": {
+      "add-info": "",
+      "add-title": "",
+      "auto-star": "",
+      "data-source-name": "",
+      "description": "",
+      "edit-info": "",
+      "edit-title": "",
+      "query": "",
+      "visibility": ""
+    },
+    "query-template-modall": {
+      "data-source-type": ""
     },
     "rich-history": {
       "close-tooltip": "Fermer l'historique des requêtes",
@@ -1656,6 +1672,18 @@
     }
   },
   "plugins": {
+    "details": {
+      "labels": {
+        "dependencies": "",
+        "downloads": "",
+        "from": "",
+        "reportAbuse": "",
+        "signature": "",
+        "status": "",
+        "updatedAt": "",
+        "version": ""
+      }
+    },
     "empty-state": {
       "message": ""
     }
@@ -2031,8 +2059,7 @@
       "html": "Intégrer du HTML",
       "html-description": "Le code HTML ci-dessous peut être copié et inclus dans une autre page Web. Sauf si l'accès anonyme est activé, l'utilisateur qui consulte cette page doit être connecté à Grafana pour que le graphique charge.",
       "info": "Générer du HTML pour intégrer un iframe avec ce panneau.",
-      "time-range": "Période temporelle actuelle",
-      "time-range-description": "Transforme la période temporelle relative actuelle en une période temporelle absolue"
+      "time-range": ""
     },
     "export": {
       "back-button": "Retour à la configuration de l'exportation",
@@ -2102,10 +2129,14 @@
   },
   "share-panel": {
     "drawer": {
-      "share-link-title": ""
+      "share-embed-title": "",
+      "share-link-title": "",
+      "share-snapshot-title": ""
     },
     "menu": {
-      "share-link-title": ""
+      "share-embed-title": "",
+      "share-link-title": "",
+      "share-snapshot-title": ""
     }
   },
   "share-playlist": {
@@ -2191,6 +2222,9 @@
       "success-creation": "",
       "success-delete": "",
       "view-all-button": ""
+    },
+    "share-panel": {
+      "info-alert": ""
     },
     "url-column-header": "URL de l'instantané",
     "view-button": "Afficher"
