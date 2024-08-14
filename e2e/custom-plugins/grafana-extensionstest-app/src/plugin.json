@@ -21,7 +21,7 @@
     {
       "type": "page",
       "name": "Page One",
-      "path": "/a/%PLUGIN_ID%/one",
+      "path": "/a/grafana-extensionstest-app/one",
       "role": "Admin",
       "addToNav": true,
       "defaultNav": true
@@ -29,7 +29,7 @@
     {
       "type": "page",
       "name": "Page Two",
-      "path": "/a/%PLUGIN_ID%/two",
+      "path": "/a/grafana-extensionstest-app/two",
       "role": "Admin",
       "addToNav": true,
       "defaultNav": false
@@ -37,7 +37,7 @@
     {
       "type": "page",
       "name": "Page Three",
-      "path": "/a/%PLUGIN_ID%/three",
+      "path": "/a/grafana-extensionstest-app/three",
       "role": "Admin",
       "addToNav": true,
       "defaultNav": false
@@ -45,7 +45,7 @@
     {
       "type": "page",
       "name": "Page Four",
-      "path": "/a/%PLUGIN_ID%/four",
+      "path": "/a/grafana-extensionstest-app/four",
       "role": "Admin",
       "addToNav": true,
       "defaultNav": false
@@ -54,7 +54,7 @@
       "type": "page",
       "icon": "cog",
       "name": "Configuration",
-      "path": "/plugins/%PLUGIN_ID%",
+      "path": "/plugins/grafana-extensionstest-app",
       "role": "Admin",
       "addToNav": true
     }

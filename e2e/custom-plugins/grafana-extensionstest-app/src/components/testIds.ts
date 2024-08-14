@@ -1,22 +1,16 @@
 export const testIds = {
-  appConfig: {
-    container: 'data-testid ac-container',
-    apiKey: 'data-testid ac-api-key',
-    apiUrl: 'data-testid ac-api-url',
-    submit: 'data-testid ac-submit-form',
+  container: 'main-app-body',
+  actions: {
+    button: 'action-button',
   },
-  pageOne: {
-    container: 'data-testid pg-one-container',
-    navigateToFour: 'data-testid navigate-to-four',
+  modal: {
+    container: 'container',
+    open: 'open-link',
   },
-  pageTwo: {
-    container: 'data-testid pg-two-container',
+  appA: {
+    container: 'a-app-body',
   },
-  pageThree: {
-    container: 'data-testid pg-three-container',
-  },
-  pageFour: {
-    container: 'data-testid pg-four-container',
-    navigateBack: 'data-testid navigate-back',
+  appB: {
+    modal: 'b-app-modal',
   },
 };

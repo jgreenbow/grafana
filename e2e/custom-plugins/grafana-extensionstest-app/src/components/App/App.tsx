@@ -1,20 +1,37 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { AppRootProps } from '@grafana/data';
-import { ROUTES } from '../../constants';
-import { PageFour, PageOne, PageThree, PageTwo } from '../../pages';
+import { AppRootProps, PageLayoutType } from '@grafana/data';
+import { ActionButton } from 'components/ActionButton';
+import { PluginPage, getPluginExtensions } from '@grafana/runtime';
+import { Stack } from '@grafana/ui';
 
-export function App(props: AppRootProps) {
-  return (
-    <Routes>
-      <Route path={ROUTES.Two} element={<PageTwo />} />
-      <Route path={`${ROUTES.Three}/:id?`} element={<PageThree />} />
+type AppExtensionContext = {};
 
-      {/* Full-width page (this page will have no side navigation) */}
-      <Route path={ROUTES.Four} element={<PageFour />} />
+export class App extends React.PureComponent<AppRootProps> {
+  render() {
+    const extensionPointId = 'plugins/grafana-extensionstest-app/actions';
+    const context: AppExtensionContext = {};
 
-      {/* Default page */}
-      <Route path="*" element={<PageOne />} />
-    </Routes>
-  );
+    const { extensions } = getPluginExtensions({
+      extensionPointId,
+      context,
+    });
+
+    return (
+      <PluginPage layout={PageLayoutType.Standard}>
+        <h1>UI extensions</h1>
+        <Stack direction={'column'} gap={4}>
+          <section>
+            <h2>Legacy APIs</h2>
+            <p>Showcase that legacy APIs such as configureExtensionLink and getPluginExtensions.</p>
+            <ActionButton extensions={extensions} />
+          </section>
+          <section>
+            <h2>New API</h2>
+            <p>Showcase that legacy APIs such as configureExtensionLink and getPluginExtensions.</p>
+            <ActionButton extensions={extensions} />
+          </section>
+        </Stack>
+      </PluginPage>
+    );
+  }
 }

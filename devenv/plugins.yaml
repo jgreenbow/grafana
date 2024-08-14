@@ -33,3 +33,11 @@ apps:
       apiUrl: http://default-url.com
     secureJsonData:
       apiKey: secret-key
+  - type: myorg-c-app
+    org_id: 1
+    org_name: Main Org.
+    disabled: false
+  - type: myorg-d-app
+    org_id: 1
+    org_name: Main Org.
+    disabled: false
