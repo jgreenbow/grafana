@@ -540,8 +540,6 @@ func mode2DataSyncer(ctx context.Context, legacy LegacyStorage, storage Storage,
 					log.Error(err, "error retrieving accessor data for object from storage")
 					continue
 				}
-				accessor.SetResourceVersion("")
-				accessor.SetUID("")
 
 				if item.objStorage != nil {
 					accessorStorage, err := utils.MetaAccessor(item.objStorage)
@@ -554,6 +552,9 @@ func mode2DataSyncer(ctx context.Context, legacy LegacyStorage, storage Storage,
 
 					log.Info("updating item on unified storage", "name", name)
 				} else {
+					accessor.SetResourceVersion("")
+					accessor.SetUID("")
+
 					log.Info("inserting item on unified storage", "name", name)
 				}
 
